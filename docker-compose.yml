@@ -1,0 +1,14 @@
+version: '3.5'
+services:
+  interpreter:
+    build:
+      context: .
+      target: interpreter
+    working_dir: /app
+    volumes:
+      - .:/app
+
+  serving:
+    build:
+      context: .
+      target: tensorflow-serving
